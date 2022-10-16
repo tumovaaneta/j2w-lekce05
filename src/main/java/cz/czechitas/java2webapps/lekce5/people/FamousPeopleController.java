@@ -28,4 +28,25 @@ public class FamousPeopleController {
     return result;
   }
 
+  @GetMapping(value = "/", params = "query")
+  public ModelAndView query(String query) {
+    ModelAndView result = new ModelAndView("index");
+    result.addObject("people", service.getByName(query));
+    result.addObject("gender", Gender.values());
+    result.addObject("query", query);
+    return result;
+  }
+
+  @PostMapping("/")
+  public String append(Person person) {
+    service.append(person);
+    return "redirect:/";
+  }
+
+  @PostMapping("/delete")
+  public String delete(int id) {
+    service.deleteById(id);
+    return "redirect:/";
+  }
+
 }
