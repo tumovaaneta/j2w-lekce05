@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class FamousPeopleService {
-  private final List<Person> people = new ArrayList<>();;
+  private final List<Person> people = new ArrayList<>();
 
   public FamousPeopleService() {
     people.add(new Person("Angela", "Merkelová", LocalDate.of(1954, 7, 17), Gender.Female));
@@ -34,6 +34,10 @@ public class FamousPeopleService {
 
   public void append(Person person) {
     people.add(person);
+  }
+
+  public void edit(int id, Person person) {
+    people.set(id, person);
   }
 
   public void deleteById(int id) {

@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-                <div class="d-flex">
+                <form class="d-flex" method="get" action="/search">
                     <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search" value="${query!}">
                     <button class="btn btn-outline-light" type="submit">Search</button>
-                </div>
+                </form>
             </div>
         </div>
     </nav>
